@@ -1,0 +1,17 @@
+// the text file you put your code into:
+// must have one and only public class
+// the text file we are working in must have one and only one public class
+// This public class should be named MainApplicatio
+// this is where you put the public static void main method
+// the public static void main method is the entry point into the application
+// this method is the thing that kicks the soccer ball and gets the application 
+// running
+
+public class MainApplication{
+	// this is NOT part of my Algorithm Design
+	// this is here to be the container for the public static void main class
+
+	public static void main(String [] args){
+		System.out.println("HELLO");
+	}
+}
