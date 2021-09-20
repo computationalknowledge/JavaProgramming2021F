@@ -1,0 +1,12 @@
+// arrays
+
+public class PlayGround{
+	static String [] cars = {"Ford", "GM", "BMW"};
+
+	public static void main(String [] args){
+		
+		for (int counter = 0; counter<3; counter++){
+			System.out.println(cars[counter]);
+		}
+	}
+}
