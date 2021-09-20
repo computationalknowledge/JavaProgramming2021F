@@ -3,3 +3,34 @@ mkdir   make a directory
 chdir   change directory
 
 rm      remove or delete a directory
+
+dir     directory list:  shows all files and sub directories within a directory
+
+
+
+
+In computers starting from the 1970s we have magnetic hard drives. The way information is encoded on your hard drive is in the form of something called files.
+
+There is a level of organization called the directory system.
+
+There are some small variations between Windows and Unix/LINUX but what I’m about to say applies to any computer you’re going to work with.  Mac OS is Unix.
+
+In Windows the root volume of your file system is the C drive.
+
+Best Work Practice when doing programming:
+
+Use cd \  
+
+Cd  <space>  backslash  : takes you to the “root” of the C: drive volum
+
+This will take you to the “root” highest level 
+
+
+Mkdir classwork
+
+
+
+Cd classwork
+
+Your command prompt should now reflect that you are in C:\classwork
+
