@@ -9,9 +9,12 @@
 
 public class MainApplication{
 	// this is NOT part of my Algorithm Design
-	// this is here to be the container for the public static void main class
+	// this is here to be the container for the 
+	// public static void main class
 
 	public static void main(String [] args){
-		System.out.println("HELLO");
+		// how can we get information into our program from outside
+		// 1. One way is command line arguments.
+		System.out.println(args[0]);
 	}
 }
