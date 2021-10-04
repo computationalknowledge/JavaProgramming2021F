@@ -1,3 +1,4 @@
+import java.io.*;
 
 public class MainApplication {
 
@@ -8,16 +9,41 @@ public class MainApplication {
 
 }
 
-class Hypervisor{
+class Hypervisor {
 	// gets called first
 	// issues all the method calls to make the application
 	public void Director() {
-		// import the data file
+		FileHandler f = new FileHandler();
+		f.importDataFile();
 	}
 }
 
-class FileHandling{
-	// in charge of reading/writing files from the file system
-	void importDataFile() {}
-	
+class FileHandler {
+	String fileName = "c:/pineapple/redata.csv";
+	String line = null;
+
+	void importDataFile() {
+		try {
+			// FileReader reads text files in the default encoding.
+			FileReader fileReader = new FileReader(fileName);
+
+			// Always wrap FileReader in BufferedReader.
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+			while ((line = bufferedReader.readLine()) != null) {
+				System.out.println(line);
+			}
+
+			// Always close files.
+			bufferedReader.close();
+		} catch (FileNotFoundException ex) {
+			System.out.println("Unable to open file '" + fileName + "'");
+		} catch (IOException ex) {
+			System.out.println("Error reading file '" + fileName + "'");
+			// Or we could just do this:
+			// ex.printStackTrace();
+		}
+
+	}
+
 }
