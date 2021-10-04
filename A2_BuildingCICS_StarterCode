@@ -47,3 +47,29 @@ class FileHandler {
 	}
 
 }
+
+class RealEstateRecord {
+	String HouseType;
+	String HouseDescription;
+	String Community;
+	double ListPrice;
+	double SoldPrice;
+	double Taxes;
+	String StreetName;
+	String StNumber;
+	int NumberOfBedrooms;
+	int NumberOfBedPlus;
+	double NumberOfBaths;
+	double Front;
+	int ParkingDriveSpaces;
+	double Depth;
+	String GarageType;
+	String PoolDescription;
+	String BrokerRemarks;
+	String RemarksForClients;
+	String ExtraDetails;
+	String BasementDescription1;
+	String BasementDescription2;
+	
+	
+}
