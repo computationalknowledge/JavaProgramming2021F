@@ -1,5 +1,4 @@
 import java.io.*;
-// data file that works with this activity: https://www.dropbox.com/s/8l2k52s2ty0prwa/redata.csv?dl=0
 
 public class MainApplication {
 
@@ -72,5 +71,50 @@ class RealEstateRecord {
 	String BasementDescription1;
 	String BasementDescription2;
 	
+	public RealEstateRecord(
+	HouseType 
+	HouseType 
+	Community
+	ListPrice
+	SoldPrice
+	Taxes
+	StreetName
+	StNumber
+	NumberOfBedrooms 
+	NumberOfBedPlus
+	NumberOfBaths
+	Front
+	parkingDriveSpaces
+	Depth
+	GarageType 
+	PoolDescription
+	BrokerRemarks
+	RemarksForClients
+	ExtraDetails
+	BasementDescription1
+	BasementDescription2
+	) {
+		HouseType = this.HouseType  ;
+		HouseDescription = this.HouseDescription;
+		Community = this.Community;
+		ListPrice = this.ListPrice;
+		SoldPrice = this.SoldPrice;
+		Taxes = this.Taxes;
+		StreetName = this.StreetName;
+		StNumber = this.StNumber;
+		NumberOfBedrooms = this.NumberOfBedrooms;
+		NumberOfBedPlus = this.NumberOfBedPlus;
+		NumberOfBaths = this.NumberOfBaths;
+		Front = this.Front;
+		parkingDriveSpaces = this.parkingDriveSpaces;
+		Depth = this.Depth;
+		GarageType = this.GarageType;
+		PoolDescription = this.PoolDescription;
+		BrokerRemarks = this.BrokerRemarks;
+		RemarksForClients = this.RemarksForClients;
+		ExtraDetails = this.ExtraDetails;
+		BasementDescription1 = this.BasementDescription1;
+		BasementDescription2 = this.BasementDescription2;
+	}
 	
 }
