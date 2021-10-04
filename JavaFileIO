@@ -1,0 +1,321 @@
+Java Reading from Text File Example
+The following small program reads every single character from the file MyFile.txt and prints all the characters to the output console:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+	
+package net.codejava.io;
+ 
+import java.io.FileReader;
+import java.io.IOException;
+ 
+/**
+ * This program demonstrates how to read characters from a text file.
+ * @author www.codejava.net
+ *
+ */
+public class TextFileReadingExample1 {
+ 
+    public static void main(String[] args) {
+        try {
+            FileReader reader = new FileReader("MyFile.txt");
+            int character;
+ 
+            while ((character = reader.read()) != -1) {
+                System.out.print((char) character);
+            }
+            reader.close();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+ 
+}
+The following example reads a text file with assumption that the encoding is UTF-16:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+	
+package net.codejava.io;
+ 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+ 
+/**
+ * This program demonstrates how to read characters from a text file using
+ * a specified charset.
+ * @author www.codejava.net
+ *
+ */
+public class TextFileReadingExample2 {
+ 
+    public static void main(String[] args) {
+        try {
+            FileInputStream inputStream = new FileInputStream("MyFile.txt");
+            InputStreamReader reader = new InputStreamReader(inputStream, "UTF-16");
+            int character;
+ 
+            while ((character = reader.read()) != -1) {
+                System.out.print((char) character);
+            }
+            reader.close();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+ 
+}
+And the following example uses a BufferedReader to read a text file line by line (this is the most efficient and preferred way):
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+	
+package net.codejava.io;
+ 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+ 
+/**
+ * This program demonstrates how to read characters from a text file
+ * using a BufferedReader for efficiency.
+ * @author www.codejava.net
+ *
+ */
+public class TextFileReadingExample3 {
+ 
+    public static void main(String[] args) {
+        try {
+            FileReader reader = new FileReader("MyFile.txt");
+            BufferedReader bufferedReader = new BufferedReader(reader);
+ 
+            String line;
+ 
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+            reader.close();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+ 
+}
+ 
+
+5. Java Writing to Text File Example
+In the following example, a FileWriter is used to write two words “Hello World” and “Good Bye!” to a file named MyFile.txt:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+	
+package net.codejava.io;
+ 
+import java.io.FileWriter;
+import java.io.IOException;
+ 
+/**
+ * This program demonstrates how to write characters to a text file.
+ * @author www.codejava.net
+ *
+ */
+public class TextFileWritingExample1 {
+ 
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("MyFile.txt", true);
+            writer.write("Hello World");
+            writer.write("\r\n");   // write new line
+            writer.write("Good Bye!");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+ 
+    }
+ 
+}
+Note that, a writer uses default character encoding of the operating system by default. It also creates a new file if not exits, or overwrites the existing one. If you want to append text to an existing file, pass a boolean flag of true to constructor of the writer class:
+	
+FileWriter writer = new FileWriter("MyFile.txt", true);
+The following example uses a BufferedReader that wraps a FileReader to append text to an existing file:
+
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+ 
+/**
+ * This program demonstrates how to write characters to a text file
+ * using a BufferedReader for efficiency.
+ * @author www.codejava.net
+ *
+ */
+public class TextFileWritingExample2 {
+ 
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("MyFile.txt", true);
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+ 
+            bufferedWriter.write("Hello World");
+            bufferedWriter.newLine();
+            bufferedWriter.write("See You Again!");
+ 
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+ 
+    }
+ 
+}
+This is the preferred way to write to text file because the BufferedReader provides efficient way for writing character streams.
+
+And the following example specifies specific character encoding (UTF-16) when writing to the file:
+
+
+
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+ 
+/**
+ * This program demonstrates how to write characters to a text file using
+ * a specified charset.
+ * @author www.codejava.net
+ *
+ */
+public class TextFileWritingExample3 {
+ 
+    public static void main(String[] args) {
+        try {
+            FileOutputStream outputStream = new FileOutputStream("MyFile.txt");
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-16");
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+             
+            bufferedWriter.write("Xin chào");
+            bufferedWriter.newLine();
+            bufferedWriter.write("Hẹn gặp lại!");
+             
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+         
+    }
+}
