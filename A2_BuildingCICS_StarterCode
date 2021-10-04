@@ -1,0 +1,23 @@
+
+public class MainApplication {
+
+	public static void main(String[] args) {
+		Hypervisor programController = new Hypervisor();
+		programController.Director();
+	}
+
+}
+
+class Hypervisor{
+	// gets called first
+	// issues all the method calls to make the application
+	public void Director() {
+		// import the data file
+	}
+}
+
+class FileHandling{
+	// in charge of reading/writing files from the file system
+	void importDataFile() {}
+	
+}
