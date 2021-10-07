@@ -1,0 +1,57 @@
+// starter code:
+// you finish this up
+
+// Java code to illustrate iterator()
+  
+import java.util.*;
+  
+public class PlayWithArrayList2 {
+  
+    public static void main(String args[])
+    { 
+       Hypervisor applicationController = new Hypervisor();
+       applicationController.run();
+    }
+}
+
+class Hypervisor{
+
+     StudentFactory factory = new StudentFactory();
+        factory.MakeStudents("999", "Joe");
+}
+
+class StudentData{
+        public ArrayList StudentRecords;
+
+        public ArrayList MakeStudentRecords(){ 
+            public ArrayList<Integer> student_list = new ArrayList<Integer>();
+            return student_list;
+        }
+
+    public void run(){
+        MakeStudentRecords()
+    }
+}
+
+class Student_{
+    String studentID;
+    String studentName;
+
+    public Student(String _sID, String _sName){
+        this.studentID = _sID;
+        this.studentName = _sName;
+    }
+}
+
+class StudentFactory{
+
+    public void MakeStudents(String sid, String sname){
+        for ( int counter = 0 ; counter++ < 10 ; ){ 
+            
+            // how to stuff this object reference into a Array List
+            new Student(sid, sname);  
+
+        }
+
+    }
+}
