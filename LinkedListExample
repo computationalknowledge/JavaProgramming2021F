@@ -1,0 +1,34 @@
+public class LinkedListExample {
+
+	// our Business Domain for our Example:
+	// A route planner for a Flower Delivery Service
+	public static void main(String[] args) {
+		Hypervisor.run();
+	}
+}
+
+class Hypervisor{
+	public static City Brampton;
+	public static City Mississauga;
+	public static City Toronto;
+	public static City Pickering;
+	public static City Ajax;
+	
+	public static void run() {}
+	public void makeCities() {
+		Brampton = new City("Brampton");
+		Mississauga = new City("Mississauga");
+		Toronto = new City("Toronto");
+		Pickering = new City("Pickering");
+		Ajax = new City("Ajax");
+	}
+}
+
+class City{
+	public String CityName;
+	public City eastCity;
+	public City westCity;
+	public City(String _CityName) {
+		this.CityName = _CityName;
+	}
+}
