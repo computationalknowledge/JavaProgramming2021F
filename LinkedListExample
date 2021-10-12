@@ -40,6 +40,7 @@ class City{
 	public String CityName;
 	public City eastCity;
 	public City westCity;
+	
 	public City(String _CityName) {
 		this.CityName = _CityName;
 	}
@@ -52,17 +53,24 @@ class DeliverySchedule{
 }
 
 class Delivery{
-	public String product;
-	
-	public String Do_a_Delivery(City toCity, this.product) {
+	public Product product;
+	public String directionOfTravel;
+	public String Do_a_Delivery(City toCity, Product product) {
 		return "Delivered " + this.product + " to " + toCity;
 	}
 	
 	public void TraverseCities(City startCity, City destinationCity) {
+
 		City currentCity = startCity;
 		// how will we find out what nextCity is ?
-		City nextCity = 
+		if ((this.directionOfTravel).equals("west")) {
+			nextCity = currentCity.westCity;
+		}
+		else {nextCity = currentCity.eastCity;}
+		
 		// Output the name of each city that we go through
 		
 	}
 }
+
+class Product{}
