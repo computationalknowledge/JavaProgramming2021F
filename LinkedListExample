@@ -1,3 +1,4 @@
+
 public class LinkedListExample {
 
 	// our Business Domain for our Example:
@@ -21,6 +22,17 @@ class Hypervisor{
 		Toronto = new City("Toronto");
 		Pickering = new City("Pickering");
 		Ajax = new City("Ajax");
+		// how to connect our cities together
+		Brampton.westCity = null;
+		Brampton.eastCity = Mississauga;
+		Mississauga.westCity = Brampton;
+		Mississauga.eastCity = Toronto;
+		Toronto.westCity = Mississauga;
+		Toronto.eastCity = Pickering;
+		Pickering.westCity = Toronto;
+		Pickering.eastCity = Ajax;
+		Ajax.westCity = Pickering;
+		Ajax.eastCity = null;
 	}
 }
 
@@ -30,5 +42,27 @@ class City{
 	public City westCity;
 	public City(String _CityName) {
 		this.CityName = _CityName;
+	}
+}
+
+class DeliverySchedule{
+	public static void MakeSchedule() {
+		
+	}
+}
+
+class Delivery{
+	public String product;
+	
+	public String Do_a_Delivery(City toCity, this.product) {
+		return "Delivered " + this.product + " to " + toCity;
+	}
+	
+	public void TraverseCities(City startCity, City destinationCity) {
+		City currentCity = startCity;
+		// how will we find out what nextCity is ?
+		City nextCity = 
+		// Output the name of each city that we go through
+		
 	}
 }
