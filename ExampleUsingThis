@@ -1,0 +1,37 @@
+
+public class School {
+
+	public static void main(String[] args) {
+		School.Hypervisor();
+		
+	}
+	
+	static void Hypervisor() {
+		// method choreography
+		Student s = new Student("John");
+		Object o = (Object)s.SayHello();
+		System.out.println(o);
+		
+	}
+
+}
+
+
+
+class Student {
+	
+	String StudentName;
+	
+	public Student(String sName) {
+		this.StudentName = sName;
+	}
+	
+	public Object SayHello() {
+		return this;
+	}
+	
+	public String toString() {
+		return "Hello " + this.StudentName + " we are happy to see you!"; 
+	}
+
+}
